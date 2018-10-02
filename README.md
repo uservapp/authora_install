@@ -1,11 +1,11 @@
-# UservCoin
+# AuthoraCoin
 Shell script to install a [UservCoin Masternode](http://uservcoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
 ## Installation
 ```
-wget -N https://raw.githubusercontent.com/uservapp/installation/master/userv_install.sh
-bash userv_install.sh
+wget -N https://raw.githubusercontent.com/uservapp/authora_install/master/authora_install.sh
+bash authora_install.sh
 ```
 Wait until you request "Private Key" and paste your "masternode genkey" generated in the following steps.
 ***
@@ -13,9 +13,9 @@ Wait until you request "Private Key" and paste your "masternode genkey" generate
 ## Desktop wallet setup  
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
-1. Open the UservCoin Desktop Wallet.  
+1. Open the AuthoraCoin Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: (Example): **MN1**  
-3. Send **3000** USERV to **MN1**. You need to send all 3000 coins in one single transaction.
+3. Send **5000** ATH to **MN1**. You need to send all 5000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> "Debug Window - Console"**  
 6. Type the following command and copy the generated key to Notepad: **masternode genkey**  And **masternode outputs**
@@ -26,13 +26,13 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 Alias Address Privkey TxHash TxIndex
 ```
 * Alias: **MN1**
-* Address: **VPS_IP:46120**
+* Address: **VPS_IP:23854**
 * Privkey: **Masternode Private Key**
 * TxHash: **First value from masternode outputs**
 * TxIndex:  **Second value from masternode outputs**
 ```
 Example: 
-mn1 127.0.0.1:46120 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+mn1 127.0.0.1:23854 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
 
 ```
 9. Save and close the file.
@@ -45,22 +45,22 @@ masternode start-alias MN1
 ```
 14. Login to your VPS and check your masternode status by running the following command:
 ```
-userv-cli masternode status
+authoracoin-cli masternode status
 ```
 ***
 
 ## Usage:
 ```
-userv-cli masternode status  
-userv-cli getinfo
+authoracoin-cli masternode status  
+authoracoin-cli getinfo
 ```
-Also, if you want to check/start/stop **Userv**, run one of the following commands as **root**:
+Also, if you want to check/start/stop **Authora**, run one of the following commands as **root**:
 
 ```
-systemctl status Userv #To check if UservCoin service is running  
-systemctl start Userv #To start UservCoin service  
-systemctl stop Userv #To stop UservCoin service  
-systemctl is-enabled Userv #To check if UservCoin service is enabled on boot  
+systemctl status Authora #To check if AuthoraCoin service is running  
+systemctl start Authora #To start AuthoraCoin service  
+systemctl stop Authora #To stop AuthoraCoin service  
+systemctl is-enabled Authora #To check if AuthoraCoin service is enabled on boot  
 ```  
 ***
 
